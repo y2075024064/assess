@@ -1,0 +1,8 @@
+.vs/
+.idea/
+[Bb]in/
+[Oo]bj/
+/Assess.WebApi/wwwroot/uploads/
+/Assess.WebApi/Assess.WebApi.csproj.user
+/Assess.WebApi/Properties/PublishProfiles/FolderProfile.pubxml
+/Assess.WebApi/Properties/PublishProfiles/FolderProfile.pubxml.user

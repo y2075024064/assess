@@ -1,0 +1,5 @@
+﻿第一步：打开程序包管理控制台，选择本项目；
+第二步：Add-Migration <更新文件名称>
+第三步：Update-Database
+
+Scaffold-DbContext "Data Source=E:\MyProject\C#Project\TakeOut\TakeOut.WebApi\DataBase\TakeOut.db3" Microsoft.EntityFrameworkCore.Sqlite -OutputDir Entities

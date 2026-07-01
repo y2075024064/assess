@@ -1,0 +1,42 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": [
+    "env.d.ts",
+    "src/*.vue",
+    "src/**/*",
+    "src/**/*.*",
+    "src/**/*.vue",
+    "src/**/**/*.vue",
+    "stylelint.config.cjs"
+  ],
+  "exclude": [
+    "src/**/__tests__/*"
+  ],
+  "compilerOptions": {
+    "composite": true,
+    "allowJs": true,
+    "noEmit": true,
+    "baseUrl": "./",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@views/*": [
+        "src/views/*"
+      ],
+      "@http": [
+        "src/utils/http"
+      ],
+      "@store/*": [
+        "src/stores/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ]
+    }
+  }
+}

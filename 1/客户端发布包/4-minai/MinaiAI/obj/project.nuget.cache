@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "I4iuvs9TMLg=",
+  "success": true,
+  "projectFilePath": "D:\\vscode\\assess\\1\\客户端发布包\\4-minai\\MinaiAI\\MinaiAI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ROG\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.8\\microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "C:\\Users\\ROG\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
