@@ -33,6 +33,10 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/ai/, ''),
       },
+      '/uploads': {
+        target: 'http://localhost:5177',
+        changeOrigin: true,
+      },
     },
   }
 })

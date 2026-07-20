@@ -35,13 +35,13 @@ public class TopicService : BusinessServiceBase<TopicInfo>, ITopicService
                 break;
             case TopicType.多选:
             case TopicType.填空:
-                if (answers.Length == answer.Length)
+                isRight = answers.Length == answer.Length;
+                if (isRight)
                 {
                     for (int i = 0; i < answers.Length; i++)
                     {
-                        if (answer[i] != answers[i]) { break; }
+                        if (answer[i] != answers[i]) { isRight = false; break; }
                     }
-                    isRight = true;
                 }
                 break;
             default: break;

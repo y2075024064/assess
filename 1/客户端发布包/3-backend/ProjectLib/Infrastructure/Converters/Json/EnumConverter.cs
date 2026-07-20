@@ -11,7 +11,7 @@ public class EnumConverter : JsonConverter
     public override bool CanConvert(Type objectType)
     {
         if (objectType.IsEnum) return true;
-        else if (objectType.IsGenericType && objectType.GenericTypeArguments[0].IsEnum) return true;
+        else if (objectType.IsGenericType && objectType.GetGenericTypeDefinition() == typeof(Nullable<>) && objectType.GenericTypeArguments[0].IsEnum) return true;
         else return false;
     }
 

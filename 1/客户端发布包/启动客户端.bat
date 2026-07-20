@@ -2,7 +2,7 @@
 chcp 65001 >nul
 title 🎒 客户端启动中...
 
-set ROOT=%~dp0..
+set ROOT=%~dp0
 
 REM 确保 MySQL 已启动
 echo 正在检查数据库...
@@ -19,14 +19,14 @@ if errorlevel 1 (
 echo 数据库就绪 ✅
 
 REM 启动后端 API
-start /min "后端服务" dotnet run --project "%ROOT%\3\Assess.WebApi"
+start /min "后端服务" dotnet run --project "%ROOT%3-backend\Assess.WebApi"
 
 REM 启动米奈 AI
-start /min "米奈AI" dotnet run --project "%ROOT%\4\MinaiAI"
+start /min "米奈AI" dotnet run --project "%ROOT%4-minai\MinaiAI"
 
 REM 启动前端
 timeout /t 10 /nobreak >nul
-start /min "前端服务" cmd /c "cd /d "%ROOT%\2\assessweb" && npm run dev"
+start /min "前端服务" cmd /c "cd /d "%ROOT%2-user-frontend" && npm run dev"
 
 REM 打开浏览器
 timeout /t 8 /nobreak >nul

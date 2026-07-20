@@ -123,7 +123,7 @@
       <div class="px-4 mb-4" v-if="info.baseInfo.isTrue != null">
         <van-tag v-if="info.baseInfo.isTrue" type="success" size="large">正确</van-tag>
         <van-tag v-else type="danger" size="large">错误</van-tag>
-        <p class="mt-3">答案：{{ rightAnswer }}</p>
+        <p class="mt-3">答案：<span v-html="rightAnswer"></span></p>
         <p class="my-1">解析：</p>
         <div class="my-1" v-html="info.analysis"></div>
       </div>
@@ -293,7 +293,7 @@ const dealTopicInfo = () => {
           multiSelected.value = answers
           break
         case '填空':
-          fillAnswer.value = answers.map((value) => ({ value }))
+          fillAnswer.value = answers.map((value: string) => ({ value }))
           break
       }
     }
@@ -312,7 +312,12 @@ const dealTopicInfo = () => {
       if (!isTested) fillAnswer.value.push({ value: '' })
       return match.slice(1, -1)
     }
-    content.value = props.info.content.replace(/$_+$/g, replaceFunc)
+    let newContent = props.info.content.replace(/\[_+\]/g, replaceFunc)
+    // 如果没有 [_] 占位符但又是填空类型，在末尾加一个输入框
+    if (fillAnswer.value.length === 0 && !isTested) {
+      fillAnswer.value.push({ value: '' })
+    }
+    content.value = newContent
   } else {
     content.value = props.info.content
   }

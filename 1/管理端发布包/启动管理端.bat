@@ -2,7 +2,7 @@
 chcp 65001 >nul
 title 🔐 管理端启动中...
 
-set ROOT=%~dp0..
+set ROOT=%~dp0
 
 REM 确保 MySQL 已启动
 echo 正在检查数据库...
@@ -19,11 +19,11 @@ if errorlevel 1 (
 echo 数据库就绪 ✅
 
 REM 启动后端 API
-start /min "后端服务" dotnet run --project "%ROOT%\3\Assess.WebApi"
+start /min "后端服务" dotnet run --project "%ROOT%3-backend\Assess.WebApi"
 
 REM 启动后台管理
 timeout /t 10 /nobreak >nul
-start /min "后台管理" cmd /c "cd /d "%ROOT%\1" && npm run dev"
+start /min "后台管理" cmd /c "cd /d "%ROOT%1-admin" && npm run dev"
 
 REM 打开登录页
 timeout /t 15 /nobreak >nul
